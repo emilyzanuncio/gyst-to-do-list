@@ -1,0 +1,190 @@
+@font-face {
+  font-family: Questrial;
+  src: url("styles/fonts/Questrial/Questrial-Regular.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("styles/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2");
+}
+
+/*------------------- GENERAL -------------------*/
+.title {
+  font-family: Questrial, monospace, "PT Sans", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.5rem;
+}
+
+h1 {
+  display:flex;
+  position: fixed;
+  padding-left: 1200px;
+}
+
+h1:hover {
+  color: red;
+}
+
+/*------------------- HEADER -------------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  /*flex-wrap: wrap;*/
+  align-items: center; /*Talvez tenha que modificar*/
+  padding: 0rem 2.5rem;
+  font-family: Montserrat, monospace, "PT Sans", Tahoma, sans-serif;
+  font-size: 18px;
+}
+
+.menu-link {
+  z-index: 2;
+}
+
+header #icon {
+  font-size: 40px;
+}
+
+/*------------------- MENU -------------------*/
+.topOverlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-y: hidden;
+  transition: 0.6s;
+}
+
+.menu-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px; /* TEST THIS */
+}
+
+.menu-link {
+  display: flex;
+  justify-content: space-around;
+}
+
+.topOverlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 4.5rem;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.topOverlay a:hover, .topOverlay a:focus {
+  color: #4181A1;
+}
+
+.closebtn {
+  text-decoration: none;
+  color: black;
+}
+
+
+/*------------------- SETTINGS -------------------*/
+.sideOverlay{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  /*padding-top: 60px;*/
+  transition: 0.5s;
+}
+
+.sideOverlay a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sideOverlay a:hover {
+  color: #f1f1f1;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+/*-----------------------------------------------
+
+// ANIMATIONS
+
+-----------------------------------------------*/
+
+/*---------- UNDERLINE HOVER ----------*/
+.underline-hover {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.underline-hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.4s ease-out;
+}
+
+.underline-hover:hover::before {
+  width: 0;
+  right: 0;
+  left: auto;
+}
+
+/*---------- MENU CLICK ----------*/
+.menu-link {
+  display: flex;
+}
+
+/* Hide extra text */
+.menu-mask {
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+}
+
+.menu-container {
+  transition: transform 0.4s ease;
+}
+
+.title {
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.menu-title1 {
+  transform-origin: right center;
+}
+
+.menu-title2 {
+  transform-origin: left center;
+  transform: rotate(20deg);
+}
